@@ -1,0 +1,14 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-scene);
+  pointer-events: none;
+  background: var(--c-bg);
+  transition: opacity 0.2s linear;
+}
+
+.stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

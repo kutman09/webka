@@ -1,0 +1,39 @@
+.lab {
+  background: var(--c-bg);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+.head > :first-child {
+  grid-column: 1 / -1;
+}
+.title {
+  grid-column: 1 / span 8;
+}
+.intro {
+  grid-column: 9 / span 4;
+  align-self: end;
+}
+
+.skeleton {
+  display: grid;
+  place-items: center;
+  min-height: 38rem;
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-l);
+}
+
+@media (max-width: 1023px) {
+  .head {
+    grid-template-columns: 1fr;
+  }
+  .title,
+  .intro {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,153 @@
+.experiment {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stage {
+  position: relative;
+  height: clamp(18rem, 34vw, 26rem);
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(184, 255, 54, 0.05), transparent 70%), #0c0e11;
+  touch-action: pan-y;
+}
+
+.stage canvas,
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.noWebgl {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: var(--c-text-2);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem 1.5rem;
+  padding: 1.1rem 1.4rem 1.3rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.range {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 9rem;
+  flex: 1 1 9rem;
+}
+
+.rangeLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+.rangeLabel output {
+  color: var(--c-text);
+}
+
+.range input[type='range'] {
+  --fill: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1.75rem;
+  background: transparent;
+  cursor: pointer;
+}
+.range input[type='range']::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--c-accent) var(--fill),
+    var(--c-border-strong) var(--fill)
+  );
+}
+.range input[type='range']::-moz-range-track {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--c-accent) var(--fill),
+    var(--c-border-strong) var(--fill)
+  );
+}
+.range input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -7px;
+  border-radius: 3px;
+  background: var(--c-text);
+  transform: rotate(45deg);
+}
+.range input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--c-text);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.action:active {
+  transform: scale(0.96);
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.segmented legend {
+  width: 100%;
+  margin-bottom: 0.45rem;
+}
+.segmented button {
+  min-height: 2.5rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  color: var(--c-text-2);
+  transition:
+    background-color var(--dur-fast) linear,
+    color var(--dur-fast) linear;
+}
+.segmented button:hover {
+  color: var(--c-text);
+}
+.segmented button[aria-pressed='true'] {
+  background: var(--c-text);
+  border-color: var(--c-text);
+  color: var(--c-bg);
+}

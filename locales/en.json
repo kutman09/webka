@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "langName": "English",
+    "short": "EN"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "lab": "Lab",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "primary": "Primary navigation",
+    "language": "Language"
+  },
+  "preloader": {
+    "fonts": "Loading typography",
+    "scene": "Compiling intelligence core",
+    "ready": "Ready"
+  },
+  "hero": {
+    "hello": "Hello, I'm",
+    "role": "Full-Stack & AI Developer",
+    "description": "I build intelligent digital experiences at the intersection of software engineering, artificial intelligence, and creative technology.",
+    "explore": "Explore My Work",
+    "contact": "Get In Touch",
+    "index": "01 / Portfolio",
+    "location": "Bishkek, Kyrgyzstan",
+    "scroll": "Scroll to explore",
+    "localTime": "Local time",
+    "coreLabel": "The Intelligence Core"
+  },
+  "about": {
+    "index": "02 / About",
+    "title": "Engineering ideas into reality.",
+    "p1": "I'm Nurkalykov Kutman, a Full-Stack and AI Developer based in Bishkek, Kyrgyzstan. I'm passionate about building intelligent software, scalable backend systems, interactive web applications, and AI-powered digital products.",
+    "p2": "I combine engineering, creativity, and modern technology to turn complex ideas into useful digital experiences.",
+    "focusTitle": "Focus areas",
+    "focus": [
+      "Full-Stack Engineering",
+      "Artificial Intelligence",
+      "Backend Architecture",
+      "Creative Technology"
+    ],
+    "portraitAlt": "Abstract NK monogram composition",
+    "portraitNote": "Portrait — NK monogram"
+  },
+  "projects": {
+    "index": "03 / Selected Works",
+    "title": "Selected Works",
+    "subtitle": "Ideas. Engineering. Execution.",
+    "intro": "Six projects across backend, security, real-time systems, culture and AI. Each one is a study in turning a problem into working software.",
+    "viewCase": "View case",
+    "stack": "Stack",
+    "status": "Status",
+    "category": "Category",
+    "focus": "Focus",
+    "overview": "Overview",
+    "github": "Source code",
+    "live": "Live demo",
+    "back": "All projects",
+    "next": "Next project",
+    "noLinks": "Public links will be added when available.",
+    "stackTbd": "Stack details coming soon",
+    "drag": "Scroll",
+    "statuses": {
+      "personal": "Personal project",
+      "in-progress": "In progress",
+      "completed": "Completed",
+      "live": "Live"
+    }
+  },
+  "skills": {
+    "index": "04 / Skills",
+    "title": "My Technology Universe",
+    "intro": "Six orbits around one core. Pick a category to bring its technologies into focus.",
+    "pick": "Choose an orbit",
+    "count": "technologies"
+  },
+  "experience": {
+    "index": "05 / Journey",
+    "title": "Always building. Always learning.",
+    "intro": "A path from the first lines of code to intelligent products. Dates and details are added as the story grows.",
+    "chapter": "Chapter"
+  },
+  "lab": {
+    "index": "06 / The Lab",
+    "title": "The Lab",
+    "intro": "Small interactive experiments — a playground for AI ideas and creative code.",
+    "loading": "Booting experiment…",
+    "neural": {
+      "title": "Neural Network",
+      "desc": "A demonstration of signals flowing through layers. It visualises the idea of a network — not a trained model.",
+      "layers": "Hidden layers",
+      "neurons": "Neurons per layer",
+      "speed": "Signal speed",
+      "fire": "Fire signal"
+    },
+    "particles": {
+      "title": "Particle Field",
+      "desc": "Particles respond to your cursor or finger. Switch between attraction and repulsion, density and shape.",
+      "mode": "Force",
+      "attract": "Attract",
+      "repel": "Repel",
+      "density": "Density",
+      "shape": "Shape",
+      "shapes": {
+        "sphere": "Orbit",
+        "grid": "Grid",
+        "nk": "NK",
+        "wave": "Wave"
+      }
+    },
+    "terminal": {
+      "title": "Developer Terminal",
+      "desc": "A safe, sandboxed terminal. Type help to see the available commands.",
+      "inputLabel": "Terminal command"
+    }
+  },
+  "contact": {
+    "index": "07 / Contact",
+    "title1": "Let's build",
+    "title2": "something great.",
+    "text": "Have an interesting project, idea, or opportunity? Let's connect and create something meaningful together.",
+    "whatsapp": "Contact via WhatsApp",
+    "email": "Send an Email",
+    "copy": "Copy Email",
+    "copied": "Email copied to clipboard",
+    "copyFailed": "Couldn't copy — the address is kutmann@gmail.com",
+    "call": "Call Me",
+    "formTitle": "Tell me about your project",
+    "name": "Your name",
+    "emailField": "Email address",
+    "type": "Project type",
+    "message": "Your message",
+    "types": {
+      "website": "Website Development",
+      "backend": "Backend Development",
+      "fullstack": "Full-Stack Application",
+      "ai": "AI Project",
+      "collab": "Collaboration",
+      "other": "Other"
+    },
+    "notice": "No mail server is connected. Your message is prepared here and opened in WhatsApp or your email app — it is sent only when you confirm there.",
+    "sendWhatsapp": "Continue in WhatsApp",
+    "sendEmail": "Continue in Email",
+    "opened": "Your message was opened in {channel}. Press send there to deliver it.",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "message": "Please write a short message (at least 10 characters)."
+    },
+    "messageIntro": "Hello Kutman! My name is {name}.",
+    "messageType": "Project type: {type}",
+    "messageEmail": "My email: {email}",
+    "subject": "Project inquiry — {type}",
+    "labels": {
+      "name": "Name",
+      "role": "Role",
+      "location": "Location",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "marquee": "Designed to think differently. Built to work better.",
+    "links": "Navigate",
+    "contact": "Contact",
+    "backToTop": "Back to top",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Signal lost.",
+    "text": "This page does not exist — or it has not been built yet.",
+    "home": "Return home"
+  }
+}

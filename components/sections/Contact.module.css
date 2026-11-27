@@ -1,0 +1,123 @@
+.contact {
+  padding-bottom: clamp(5rem, 10vw, 9rem);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-6) 0 clamp(3rem, 7vw, 6rem);
+}
+
+.titleLine {
+  display: block;
+}
+
+.titleAccent {
+  color: var(--c-accent);
+}
+
+:lang(ru) .title,
+:lang(ky) .title {
+  font-size: clamp(2.2rem, 7vw, 8rem);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--space-8) clamp(2rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.text {
+  max-width: 38ch;
+  color: var(--c-text);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--col-gap);
+  border-top: 1px solid var(--c-border);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--c-border);
+}
+.detail dd {
+  font-size: 1rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.detail a {
+  background: linear-gradient(var(--c-accent), var(--c-accent)) left bottom / 0% 1px no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+.detail a:hover,
+.detail a:focus-visible {
+  background-size: 100% 1px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.toastRegion {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--safe-bottom) + 1.5rem);
+  z-index: var(--z-menu);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+.toast[data-tone='error'] {
+  background: var(--c-text);
+}
+
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .actions > * {
+    flex: 1 1 100%;
+  }
+  .actions a,
+  .actions button {
+    width: 100%;
+  }
+  .toast {
+    white-space: normal;
+    max-width: calc(100vw - 2rem);
+  }
+}

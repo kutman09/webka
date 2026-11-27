@@ -1,0 +1,45 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  background: var(--c-black);
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.mark {
+  color: var(--c-silver);
+  will-change: transform, opacity;
+}
+
+.meta {
+  position: absolute;
+  left: max(var(--gutter), var(--safe-left));
+  right: max(var(--gutter), var(--safe-right));
+  bottom: calc(var(--safe-bottom) + 2.25rem);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.percent {
+  color: var(--c-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--c-border);
+}
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--c-accent);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}

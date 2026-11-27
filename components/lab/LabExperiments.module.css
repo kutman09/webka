@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--col-gap);
+}
+
+.neural {
+  grid-column: span 7;
+}
+.particles {
+  grid-column: span 5;
+}
+.terminal {
+  grid-column: 1 / -1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-l);
+  background: var(--c-bg-2);
+  overflow: hidden;
+}
+
+.cardHead {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem 1rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.index {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--c-accent);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--c-accent);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--c-text-2);
+  max-width: 60ch;
+}
+
+@media (max-width: 1023px) {
+  .neural,
+  .particles {
+    grid-column: 1 / -1;
+  }
+}

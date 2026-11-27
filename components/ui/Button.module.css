@@ -1,0 +1,144 @@
+.button {
+  --btn-h: 3.25rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: var(--btn-h);
+  padding: 0 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    color var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.s {
+  --btn-h: 2.6rem;
+  padding: 0 1.1rem;
+  font-size: 0.875rem;
+}
+
+.l {
+  --btn-h: 3.75rem;
+  padding: 0 1.9rem;
+  font-size: 1rem;
+}
+
+/* Fill that sweeps in from below on hover */
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transform: translateY(101%);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.button:hover::before,
+.button:focus-visible::before {
+  transform: translateY(0);
+}
+
+.primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+.primary::before {
+  background: var(--c-text);
+}
+
+.ghost {
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-text);
+  background: rgba(7, 8, 10, 0.35);
+}
+.ghost::before {
+  background: var(--c-text);
+}
+.ghost:hover,
+.ghost:focus-visible {
+  color: var(--c-bg);
+  border-color: var(--c-text);
+}
+
+.text {
+  --btn-h: 2.75rem;
+  padding: 0;
+  border-radius: 0;
+  color: var(--c-text);
+}
+.text::before {
+  display: none;
+}
+.text .label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.text:hover .label::after,
+.text:focus-visible .label::after {
+  transform: scaleX(1);
+}
+
+/* Rolling label */
+.label {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.3;
+}
+.text .label {
+  overflow: visible;
+}
+
+.labelInner,
+.labelClone {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.labelClone {
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+.text .labelClone {
+  display: none;
+}
+.button:not(.text):hover .labelInner,
+.button:not(.text):hover .labelClone,
+.button:not(.text):focus-visible .labelInner,
+.button:not(.text):focus-visible .labelClone {
+  transform: translateY(-100%);
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.button:hover .icon,
+.button:focus-visible .icon {
+  transform: translateX(3px);
+}
+
+.button:focus-visible {
+  outline-offset: 4px;
+  border-radius: var(--radius-pill);
+}

@@ -1,0 +1,143 @@
+.projects {
+  --progress: 0;
+  position: relative;
+  z-index: var(--z-content);
+  padding-block: var(--space-section);
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: calc(var(--max-w) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), var(--safe-left)) max(var(--gutter), var(--safe-right));
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.title {
+  max-width: 10ch;
+}
+
+.subtitle {
+  color: var(--c-accent);
+}
+
+.introText {
+  max-width: 40ch;
+}
+
+.counter {
+  display: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+/* Horizontal gallery on desktop */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .projects {
+    padding-block: 0;
+  }
+
+  .viewport {
+    height: 100svh;
+    /* clip, not hidden: a hidden overflow box is still programmatically scrollable,
+       so focus / scrollIntoView would shift the track sideways */
+    overflow: clip;
+    display: flex;
+    align-items: center;
+  }
+
+  .track {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(4rem, 8vw, 9rem);
+    width: max-content;
+    max-width: none;
+    margin: 0;
+    padding-top: var(--header-h-compact);
+    padding-left: max(var(--gutter), calc((100vw - var(--max-w)) / 2));
+    padding-right: 12vw;
+    will-change: transform;
+  }
+
+  .intro {
+    flex: 0 0 auto;
+    width: clamp(24rem, 34vw, 38rem);
+  }
+
+  .title {
+    font-size: clamp(2.4rem, 3.9vw, 4.8rem);
+  }
+
+  .counter {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: var(--space-6);
+    font-family: var(--font-mono);
+  }
+
+  .current {
+    font-size: 2.25rem;
+    color: var(--c-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .total {
+    color: var(--c-text-2);
+  }
+
+  .progress {
+    position: relative;
+    flex: 1;
+    height: 1px;
+    margin-left: 1rem;
+    background: var(--c-border);
+    align-self: center;
+  }
+  .progress span {
+    position: absolute;
+    inset: 0;
+    background: var(--c-accent);
+    transform: scaleX(var(--progress));
+    transform-origin: left;
+  }
+
+  .list {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(4rem, 7vw, 8rem);
+  }
+
+  .item {
+    flex: 0 0 auto;
+    width: min(54vw, calc((100svh - 26rem) * 1.333));
+    min-width: 30rem;
+  }
+
+  .item:nth-child(even) {
+    margin-top: 8vh;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8) var(--col-gap);
+  }
+  .item:nth-child(even) {
+    margin-top: 6rem;
+  }
+}

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   NK — Design tokens. Change colours, type scale, spacing and motion here.
+   ========================================================================== */
+:root {
+  /* Colour */
+  --c-bg: #07080a;
+  --c-bg-2: #101216;
+  --c-surface: #171a20;
+  --c-text: #f5f5f5;
+  --c-text-2: #9298a5;
+  --c-accent: #b8ff36;
+  --c-accent-ink: #0b0f02;
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-border-strong: rgba(255, 255, 255, 0.22);
+  --c-silver: #c7ccd5;
+  --c-black: #000000;
+  --c-danger: #ff6b5a;
+
+  /* Type families (set by next/font in app/layout.jsx) */
+  --font-display: var(--font-unbounded), 'Arial Black', sans-serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Type scale — fluid */
+  /* the name must fit one line: ~8.5em wide in Unbounded */
+  --fs-mega: clamp(2rem, 10.2vw, 10rem);
+  --fs-h1: clamp(2.4rem, 6.6vw, 7.25rem);
+  --fs-h2: clamp(2rem, 4.8vw, 5.25rem);
+  --fs-h3: clamp(1.35rem, 2.2vw, 2.25rem);
+  --fs-lead: clamp(1.05rem, 1.35vw, 1.4rem);
+  --fs-body: clamp(0.98rem, 1vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-label: 0.72rem;
+
+  --lh-tight: 0.92;
+  --lh-snug: 1.15;
+  --lh-body: 1.6;
+  --tracking-display: -0.035em;
+  --tracking-label: 0.14em;
+
+  /* Layout */
+  --max-w: 1600px;
+  --gutter: clamp(1.25rem, 3.2vw, 3.5rem);
+  --col-gap: clamp(0.75rem, 1.6vw, 1.75rem);
+  --cols: 12;
+  --header-h: 84px;
+  --header-h-compact: 64px;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --space-section: clamp(6rem, 14vw, 13rem);
+
+  /* Radius */
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 28px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 900ms;
+
+  /* Layers */
+  --z-scene: 0;
+  --z-content: 2;
+  --z-header: 50;
+  --z-menu: 60;
+  --z-cursor: 80;
+  --z-transition: 90;
+  --z-preloader: 100;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-mega: clamp(6.25rem, 9.2vw, 10rem); /* 100 → 160px */
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --fs-mega: clamp(2rem, 9.6vw, 10rem);
+    --cols: 8;
+    --header-h: 72px;
+    --header-h-compact: 60px;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --cols: 4;
+    --header-h: 64px;
+    --header-h-compact: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+  }
+}

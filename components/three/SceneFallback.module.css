@@ -1,0 +1,33 @@
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center end;
+  padding-right: 6vw;
+  background:
+    radial-gradient(60% 60% at 70% 50%, rgba(184, 255, 54, 0.06), transparent 70%), var(--c-bg);
+}
+
+.svg {
+  width: min(46vw, 620px);
+  height: auto;
+}
+
+.ring {
+  animation: spin var(--d) linear infinite;
+}
+
+.cage {
+  transform-origin: center;
+  animation: spin 90s linear infinite reverse;
+}
+
+@media (max-width: 899px) {
+  .fallback {
+    place-items: start center;
+    padding: calc(var(--header-h) + 2rem) 0 0;
+  }
+  .svg {
+    width: min(78vw, 420px);
+  }
+}

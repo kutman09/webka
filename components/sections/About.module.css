@@ -1,0 +1,187 @@
+.about {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(7, 8, 10, 0.55) 18%,
+    rgba(7, 8, 10, 0.55) 82%,
+    transparent
+  );
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: clamp(3.5rem, 8vw, 8rem);
+}
+
+.title {
+  max-width: 14ch;
+}
+
+.body {
+  row-gap: var(--space-8);
+  align-items: start;
+}
+
+.portrait {
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.portraitInner {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.composition {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(70% 55% at 50% 45%, rgba(184, 255, 54, 0.08), transparent 70%),
+    linear-gradient(160deg, #15181d, #0b0c0f 70%);
+}
+
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--c-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-border) 1px, transparent 1px);
+  background-size: 12.5% 10%;
+  mask-image: radial-gradient(80% 70% at 50% 50%, #000 40%, transparent 100%);
+}
+
+.compMark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--c-silver);
+  opacity: 0.55;
+}
+.compMark svg {
+  width: 82%;
+  height: auto;
+}
+
+.compMarkSolid {
+  position: relative;
+  color: var(--c-text);
+}
+
+.scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(184, 255, 54, 0.08) 85%,
+    rgba(184, 255, 54, 0.5) 100%
+  );
+  border-bottom: 1px solid rgba(184, 255, 54, 0.6);
+  animation: scan 5.5s var(--ease-in-out) infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(340%);
+  }
+}
+
+.cornerTL,
+.cornerBR {
+  position: absolute;
+}
+.cornerTL {
+  top: 1rem;
+  left: 1rem;
+}
+.cornerBR {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.text {
+  grid-column: 7 / span 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: clamp(0rem, 6vw, 6rem);
+}
+
+.lead {
+  font-size: clamp(1.2rem, 1.7vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.focus {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.focusList li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--c-border);
+}
+.focusList li:last-child {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.focusIndex {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--c-accent);
+}
+
+.focusName {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 1023px) {
+  .portrait {
+    grid-column: 1 / span 4;
+  }
+  .text {
+    grid-column: 5 / span 4;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .portrait,
+  .text {
+    grid-column: 1 / -1;
+  }
+  .portrait {
+    max-width: 440px;
+  }
+}

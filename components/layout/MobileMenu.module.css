@@ -1,0 +1,70 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-h) + var(--safe-top) + 2rem) max(var(--gutter), var(--safe-right))
+    calc(var(--safe-bottom) + 1.5rem) max(var(--gutter), var(--safe-left));
+  background: var(--c-bg-2);
+  overflow-y: auto;
+}
+
+.nav ol {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  overflow: hidden;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 8.5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.link[aria-current='true'] {
+  color: var(--c-accent);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--c-text-2);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.contacts {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contacts a {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-pill);
+}
